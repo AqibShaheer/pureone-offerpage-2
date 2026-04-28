@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+    <!-- ══════════ ORDER FORM ══════════ -->
+<section class="order-section" id="order">
+  <div class="order-blob order-blob-1"></div>
+  <div class="order-blob order-blob-2"></div>
+  <div class="order-blob order-blob-3"></div>
+
+  <div class="order-header">
+    <div class="order-eyebrow">Secure Checkout</div>
+    <h2 class="order-title">Complete Your<br><span class="hl">Order</span></h2>
+    <p class="order-sub">256-bit SSL encrypted · All major cards accepted · Ships within 48 hours</p>
+  </div>
+
+  <div class="order-layout">
+
+
+    <div class="order-form-wrap" data-reveal>
+      <div class="form-corner tl"></div>
+      <div class="form-corner br"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">01</span>
+          Contact Information
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field" id="f-fname">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" placeholder="John" autocomplete="given-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-lname">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" placeholder="Doe" autocomplete="family-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-email">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" placeholder="john@example.com" autocomplete="email"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-phone">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel"/>
+            <span class="field-msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">02</span>
+          Shipping Address
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field span-2" id="f-addr1">
+            <label>Street Address <span class="req">*</span></label>
+            <input type="text" placeholder="123 Research Blvd" autocomplete="address-line1"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field span-2" id="f-addr2">
+            <label>Apt / Suite / Unit</label>
+            <input type="text" placeholder="Suite 400" autocomplete="address-line2"/>
+          </div>
+          <div class="field" id="f-city">
+            <label>City <span class="req">*</span></label>
+            <input type="text" placeholder="New York" autocomplete="address-level2"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-state">
+            <label>State <span class="req">*</span></label>
+            <select autocomplete="address-level1">
+              <option value="">— Select State —</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+              <option>Arkansas</option><option>California</option><option>Colorado</option>
+              <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+              <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+              <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+              <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+              <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+              <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+              <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+              <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+              <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+              <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+              <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+              <option>Texas</option><option>Utah</option><option>Vermont</option>
+              <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+              <option>Wisconsin</option><option>Wyoming</option>
+            </select>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-zip">
+            <label>ZIP Code <span class="req">*</span></label>
+            <input type="text" placeholder="10001" maxlength="10" autocomplete="postal-code"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-country">
+            <label>Country</label>
+            <select autocomplete="country" disabled style="opacity:0.5; cursor:not-allowed;">
+              <option selected>United States</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">03</span>
+          Payment Details
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field span-2" id="f-cname">
+            <label>Name on Card <span class="req">*</span></label>
+            <input type="text" placeholder="John Doe" autocomplete="cc-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field span-2 card-field-icon" id="f-cnum">
+            <label>Card Number <span class="req">*</span></label>
+            <input type="text" placeholder="1234  5678  9012  3456" maxlength="19" autocomplete="cc-number" id="card-num-input"/>
+            <span class="card-icon" id="card-network">VISA / MC</span>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-expiry">
+            <label>Expiry Date <span class="req">*</span></label>
+            <input type="text" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" id="expiry-input"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field card-field-icon" id="f-cvv">
+            <label>CVV / CVC <span class="req">*</span></label>
+            <input type="text" placeholder="•••" maxlength="4" autocomplete="cc-csc"/>
+            <span class="card-icon">?</span>
+            <span class="field-msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">04</span>
+          Additional Notes
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label>Order Notes (optional)</label>
+            <textarea placeholder="Any special delivery instructions or notes for your order..."></textarea>
+          </div>
+          <label class="check-field" style="margin-top:0.3rem;">
+            <input type="checkbox" id="consent-check"/>
+            <span class="check-box"></span>
+            <span class="check-label">I confirm this purchase is for <strong style="color:var(--sky)">research purposes only</strong> and I am 18+ years of age. I have read and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
+          </label>
+          <label class="check-field">
+            <input type="checkbox" checked/>
+            <span class="check-box"></span>
+            <span class="check-label">Subscribe to lab updates, research bulletins, and exclusive offers.</span>
+          </label>
+        </div>
+      </div>
+
+
+      <button class="submit-btn" id="submit-btn" type="button">Place Secure Order</button>
+      <div class="submit-lock">
+        <span class="lock-icon">🔒</span>
+        256-bit SSL · Your data is fully encrypted
+      </div>
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <aside class="order-summary" data-reveal-side>
+
+      <!-- Selected product -->
+      <div class="summary-panel">
+        <div class="summary-title">Your Selection</div>
+        <div class="summary-product">
+          <img class="summary-img" src="assets/images/Hero-bogo-image.webp" alt="Product"/>
+          <div class="summary-product-info">
+            <div class="summary-product-name">PureOne Peptides</div>
+            <div class="summary-product-detail">BPC-157 · GLP-3R · Ipamorelin<br>~99% Purity · Lab Tested</div>
+          </div>
+        </div>
+
+        <!-- Package selector -->
+        <div class="summary-title" style="margin-bottom:0.9rem;">Package</div>
+        <div class="pkg-options" id="pkg-options">
+          <label class="pkg-opt" data-qty="1" data-price="55.99">
+            <input type="radio" name="pkg" value="1">
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">1 Bottle</span><span class="pkg-opt-save">Save $90.47</span></span>
+            <span class="pkg-opt-price">$55.99</span>
+          </label>
+          <label class="pkg-opt active" data-qty="6" data-price="275.94">
+            <input type="radio" name="pkg" value="6" checked>
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">6 Bottles</span><span class="pkg-opt-save">Save $220.47 · Best Value</span></span>
+            <span class="pkg-opt-price">$275.94</span>
+          </label>
+          <label class="pkg-opt" data-qty="3" data-price="149.97">
+            <input type="radio" name="pkg" value="3">
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">3 Bottles</span><span class="pkg-opt-save">Save $136.47</span></span>
+            <span class="pkg-opt-price">$149.97</span>
+          </label>
+        </div>
+
+        <!-- Line items -->
+        <div class="summary-lines" id="summary-lines">
+          <div class="summary-line"><span>Subtotal</span><span class="val" id="s-sub">$275.94</span></div>
+          <div class="summary-line discount"><span>Discount Applied</span><span class="val" id="s-disc">−$220.47</span></div>
+          <div class="summary-line"><span>Shipping</span><span class="val" id="s-ship">FREE</span></div>
+          <div class="summary-line total"><span>Total</span><span class="val" id="s-total">$275.94</span></div>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="summary-panel">
+        <div class="summary-title">Why PureOne</div>
+        <div class="trust-badges">
+          <div class="badge-row"><div class="badge-icon">🔬</div>Third-party lab tested — CoA included</div>
+          <div class="badge-row"><div class="badge-icon">🛡️</div>30-day money-back guarantee</div>
+          <div class="badge-row"><div class="badge-icon">🚚</div>Free US shipping on all orders over $150</div>
+          <div class="badge-row"><div class="badge-icon">🔒</div>256-bit SSL secured checkout</div>
+          <div class="badge-row"><div class="badge-icon">⚡</div>Dispatched within 48 business hours</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

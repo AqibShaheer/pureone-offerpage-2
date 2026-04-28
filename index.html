@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PureOne Peptides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="scan-line"></div>
+
+
+<!-- ══════════ LAB REPORT MODAL ══════════ -->
+<div class="lab-modal-overlay" id="lab-modal-overlay" role="dialog" aria-modal="true" aria-label="Certificate of Analysis">
+  <div class="lab-modal" id="lab-modal">
+
+    <!-- Header -->
+    <div class="lab-modal-header">
+      <div class="lab-modal-header-left">
+        <div class="lab-modal-indicator"></div>
+        <div>
+          <div class="lab-modal-title">Certificate of Analysis</div>
+          <div class="lab-modal-subtitle">Accumark Labs · Independent Third-Party Verification</div>
+        </div>
+        <div class="lab-modal-meta">
+          <span class="lab-meta-chip verified">✓ Verified</span>
+          <span class="lab-meta-chip">Lot #1030</span>
+          <span class="lab-meta-chip">Published 04/01/2026</span>
+        </div>
+      </div>
+      <button class="lab-modal-close" id="lab-modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <!-- Quick stats strip -->
+    <div class="lab-modal-stats">
+      <div class="lab-stat">
+        <span class="lab-stat-label">Sample</span>
+        <span class="lab-stat-val">Retatrutide</span>
+      </div>
+      <div class="lab-stat">
+        <span class="lab-stat-label">Purity Result</span>
+        <span class="lab-stat-val green">100.0%</span>
+      </div>
+      <div class="lab-stat">
+        <span class="lab-stat-label">Specification</span>
+        <span class="lab-stat-val">&gt; 98.0%</span>
+      </div>
+      <div class="lab-stat">
+        <span class="lab-stat-label">Quantity</span>
+        <span class="lab-stat-val gold">9.82 mg</span>
+      </div>
+      <div class="lab-stat">
+        <span class="lab-stat-label">Identity</span>
+        <span class="lab-stat-val green">Conforms</span>
+      </div>
+      <div class="lab-stat">
+        <span class="lab-stat-label">Lab</span>
+        <span class="lab-stat-val">Accumark</span>
+      </div>
+    </div>
+
+    <!-- COA Image -->
+    <div class="lab-modal-body">
+      <div class="lab-coa-img-wrap">
+        <img
+          class="lab-coa-img"
+          src="assets/images/Reta-10-mg-COA-1.webp"
+          alt="Certificate of Analysis — GLP-3R / Retatrutide 10mg, Accumark Labs, Purity 100%, Lot 1030"
+        />
+        <div class="lab-zoom-hint">
+          <span>🔍</span> Scroll to view full report · 100.0% purity confirmed
+        </div>
+      </div>
+    </div>
+
+    <!-- Action row -->
+    <div class="lab-modal-actions">
+      <a
+        class="lab-dl-btn"
+        href="assets/images/Reta-10-mg-COA-1.webp"
+        download="PureOne-GLP3R-CoA-Lot1030.webp"
+      >
+        ↓ Download CoA
+      </a>
+      <span class="lab-action-note">
+        Independent third-party analysis by Accumark Labs · HPLC Chromatogram verified · Lot #1030
+      </span>
+      <button class="lab-action-close-text" id="lab-action-close">Close ✕</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ─────────────────────────────────────────────────────
+     §1 — ANNOUNCEMENT BANNER
+     Paste immediately after <body> opening tag,
+     BEFORE the <nav> element.
+───────────────────────────────────────────────────────── -->
+<div class="announce-banner" id="announce-banner">
+
+  <!-- Micro strip -->
+  <div class="announce-top-strip">
+    Easter 2026 Sale — <strong>Limited Time</strong> Offers
+  </div>
+
+  <!-- Warning strip -->
+  <div class="announce-main-strip">
+    <span class="announce-warn-icon">⚠️</span>
+    <p class="announce-text">
+      <strong>Warning:</strong> Due to extremely high media demand, there is limited supply of
+      <span class="highlight">GLP-3R Advanced Peptide 2.0</span>
+      in stock as of <strong>March 11, 2026</strong>
+    </p>
+    <span class="announce-hurry">HURRY!</span>
+  </div>
+
+</div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">  
+  <div class="corner-deco tl"></div>
+  <div class="corner-deco br"></div>
+  <div class="hero-right">
+    <div class="product-stage">
+      <div class="orbit"></div>
+      <div class="orbit"></div>
+      <div class="glow-disc"></div>
+      <div class="product-img-wrap">
+        <img src="assets/images/Hero-bogo-image.png" alt="PureOne Peptides"/>
+      </div>
+      <div class="pill pill-1"><strong>⭐⭐⭐⭐⭐</strong>Rated 4.96/5 - 20,000+ Reviews</div>
+      <div class="pill pill-2"><strong>GLP-3R</strong>10mg · ~99% Purity</div>
+      <div class="pill pill-3"><strong><img class="lab-tested-badge" src="assets/images/Lab-Tested-USA-Badge.webp" /></strong>Lab Tested in - USA</div>
+    </div>
+  </div>
+  <div class="hero-left">
+    <p class="eyebrow">The #1 GLP-3R Research Grade Peptide in the USA</p>
+    <h1 class="hero-title">TRIPLE<br><span class="accent-line">RECEPTOR</span>DOMINANCE</h1>
+
+
+<!-- ─────────────────────────────────────────────────────
+     URGENCY SECTION HTML
+───────────────────────────────────────────────────────── -->
+
+
+  <section class="urgency-bar-v4" id="urgency-bar">
+    <div class="urgency-bar-v4-inner" data-uv4>
+
+      <!-- Row 1: viewers | bundles left -->
+      <div class="uv4-row1">
+        <div class="uv4-viewers">
+          <span class="uv4-dot"></span>
+          <strong id="uv4-viewers">47</strong> people are viewing this right now
+        </div>
+        <div class="uv4-stock-label">
+          <span class="warn">⚠️</span>
+          Only <strong id="uv4-stock">&nbsp;3&nbsp;</strong> bundles left
+        </div>
+      </div>
+
+      <!-- Red bar -->
+      <div class="uv4-bar-track">
+        <div class="uv4-bar-fill" id="uv4-fill"></div>
+      </div>
+
+      <!-- Row 2: sold | selling fastest -->
+      <div class="uv4-row2">
+        <div class="uv4-sold">
+          <span class="uv4-flame">🔥</span>
+          <strong id="uv4-sold">12</strong> sold in the last 2 hours
+        </div>
+        <div class="uv4-fastest">Buy 6 selling fastest</div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+    <div class="hero-pathways reveal-r">
+      <div class="hero-item">
+        <div class="hero-name">
+          <div>
+            <i class="fa-solid fa-check hero-icon"></i>
+          </div>
+          <div>
+            Fat Burning & <span class="hero-gold">Energy</span> Research
+          </div>
+        </div>
+        <p class="hero-desc">Triggers fat-burning pathways for enhanced metabolic activity.</p>
+      </div>
+      <div class="hero-item">
+        <div class="hero-name">
+          <div>
+            <i class="fa-solid fa-check hero-icon"></i>
+          </div>
+          <div>
+            Appetite <span class="hero-gold">Control</span> Research
+          </div>
+        </div>
+        <p class="hero-desc">Supports appetite-regulation signaling pathways for reduced intake.</p>
+      </div>
+      <div class="hero-item">
+        <div class="hero-name">
+          <div>
+            <i class="fa-solid fa-check hero-icon"></i>
+          </div>
+          <div>
+            Blood Sugar & <span class="hero-gold">Insulin</span> Research
+          </div>
+        </div>
+        <p class="hero-desc">Optimizes glucose control pathways and insulin response activity.</p>
+      </div>
+    </div>
+
+
+    <a href="#package-selection">
+      <div class="bogo-strip">
+        <div class="bogo-tag">BUY 3 GET 2 <span>FREE</span></div>
+        <div class="bogo-divider"></div>
+        <div class="bogo-desc">2 month supply <br> FREE on us</div>
+      </div>
+    </a>
+  
+    <!-- <div class="trust-row">
+      <div class="trust-item"><span class="trust-num">99%</span><span class="trust-label">Purity</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">3rd</span><span class="trust-label">Party Tested</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">50K+</span><span class="trust-label">Researchers</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-num">48H</span><span class="trust-label">Dispatch</span></div>
+    </div> -->
+  </div>
+</section>
+
+
+
+<!-- DATA BAR (fixed) -->
+<div class="data-bar">
+  <div class="data-item"><span class="data-dot"></span> All vials in stock</div>
+  <div class="data-item"><span class="data-dot green"></span> Free shipping over $150</div>
+  <div class="data-item"><span class="data-dot gold"></span> BOGO offer active</div>
+  <div class="data-bar-fill"></div>
+  <div class="ticker">FOR RESEARCH PURPOSES ONLY &nbsp;&nbsp;·&nbsp;&nbsp; NOT FOR HUMAN CONSUMPTION</div>
+</div>
+
+<!-- ══════════ PRICING ══════════ -->
+
+<div id="package-selection"></div>
+<section class="pricing-section">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="pricing-header">
+    <div class="pricing-eyebrow">SELECT YOUR SUPPLY</div>
+    <h2 class="pricing-title">LIMITED<br><span class="hl">TIME OFFER</span></h2>
+    <!-- <p class="pricing-sub">Lyophilized powder · 10mg vials · ≥99% purity · CoA included · Same-day shipping · Saves more when you stock up</p> -->
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card" data-card 
+     data-once-price="144.00"
+     data-sub-price="129.60"
+     data-total-once="144.00"
+     data-total-sub="129.60"
+     data-save-once="0"
+     data-save-sub="14.40">
+      <div class="card-corner tl"></div><div class="card-corner br"></div>
+      <div class="card-qty"><span class="card-qty-num">1</span><span class="card-qty-unit">Vial</span></div>
+      <div class="card-savings-static">1 Vial <span>· 10mg GLP-3R RUO</span></div>
+      <div class="card-savings">Total Savings <span>$0</span></div>
+      <div class="card-img-wrap card-img-wrap-bottle-1"><img src="assets/images/Bottle-Mockup.png" alt="1 Bottle"/></div>
+      <!-- <div class="card-gifts"><span>Buy</span><span class="free-word">1</span><div class="gift-icons"><div class="gift-dot"></div><div class="gift-dot"></div><div class="gift-dot"></div></div></div> -->
+      <div class="card-price-wrap"><span class="card-price-dollar">$</span><span class="card-price-num">144.00</span><span class="card-price-per">/ vial</span></div>
+
+      <!-- <td class="ctd-us"><span class="check-icon pricing-meta">✓ 1 × GLP-3R 10mg vial</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Certificate of Analysis</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Lyophilized powder format</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓  ≥99% purity guaranteed</span></td> -->
+
+      <div class="card-options">
+        <label class="card-option"><input type="radio" name="p1" value="once" checked><span class="radio-custom"></span><span class="option-text"><strong>One-Time Purchase</strong>Standard delivery</span></label>
+        <label class="card-option"><input type="radio" name="p1" value="sub"><span class="radio-custom"></span><span class="option-text"><strong>Subscribe &amp; Save<span class="save-badge">10% OFF</span></strong>Delivery every 20 days</span></label>
+      </div>
+      <button class="card-cta">SECURE MY ORDER</button>
+      <div class="card-footer"><div class="card-total">Total: $144.00 USD</div>
+      <!-- <div class="card-guarantee">
+        <div class="guarantee-icon">
+          30
+        </div>
+        30-Day Money-Back Guarantee
+      </div> -->
+    </div>
+    </div>
+    <div class="price-card" data-card 
+     data-once-price="287.00"
+     data-sub-price="258.30"
+     data-total-once="287.00"
+     data-total-sub="258.30"
+     data-save-once="145.00"
+     data-save-sub="173.70">
+      <div class="card-corner tl"></div><div class="card-corner br"></div>
+      <div class="card-qty"><span class="card-qty-num">3</span><span class="card-qty-unit">Vials</span></div>
+      <div class="card-savings-static">3 vials <span>· 10mg GLP-3R RUO</span></div>
+      <div class="card-savings">Total Savings <span>$145.00</span></div>
+      <div class="card-img-wrap"><img src="assets/images/Bottle-Mockup-3.png" alt="3 Bottles"/></div>
+      <div class="card-gifts"><span>Buy 2 Get 1</span><span class="free-word">Free</span><div class="gift-icons"><div class="gift-dot"></div><div class="gift-dot"></div><div class="gift-dot"></div></div></div>
+      <div class="card-price-wrap"><span class="card-price-dollar">$</span><span class="card-price-num">287.00</span><span class="card-price-per">/ vial</span></div>
+      
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ 1 vial FREE (valued at $144)</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ 2 months supply</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Same-day shipping available</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ CoA for each batch</span></td>
+      
+      <div class="card-options">
+        <label class="card-option"><input type="radio" name="p3" value="once" checked><span class="radio-custom"></span><span class="option-text"><strong>One-Time Purchase</strong>Standard delivery</span></label>
+        <label class="card-option"><input type="radio" name="p3" value="sub"><span class="radio-custom"></span><span class="option-text"><strong>Subscribe &amp; Save<span class="save-badge">10% OFF</span></strong>Delivery every 60 days</span></label>
+      </div>
+      <button class="card-cta">SECURE MY ORDER</button>
+      <div class="card-footer"><div class="card-total">Total: $287.00 USD</div>
+      <!-- <div class="card-guarantee">
+        <div class="guarantee-icon">
+          30
+        </div>
+        30-Day Money-Back Guarantee
+      </div> -->
+      </div>
+    </div>
+    <div class="price-card featured" data-card 
+     data-once-price="431.00"
+     data-sub-price="387.90"
+     data-total-once="431.00"
+     data-total-sub="387.90"
+     data-save-once="289.00"
+     data-save-sub="332.10">
+      <div class="best-value-flag">⬡ Maximum Savings &amp; Best Results</div>
+      <div class="card-corner tl"></div><div class="card-corner br"></div>
+      <div class="card-qty"><span class="card-qty-num">5</span><span class="card-qty-unit">Vials</span></div>
+      <div class="card-savings-static">5 vials <span>· 10mg GLP-3R RUO</span></div>
+      <div class="card-savings">Total Savings <span>$289.00</span></div>
+      <div class="card-img-wrap"><img src="assets/images/Bottle-Mockup-5.png" alt="6 Bottles"/></div>
+      <div class="card-gifts"><span>Buy 3 Get 2</span><span class="free-word">Free</span><div class="gift-icons"><div class="gift-dot"></div><div class="gift-dot"></div><div class="gift-dot"></div></div></div>
+      <div class="card-price-wrap"><span class="card-price-dollar">$</span><span class="card-price-num">431.00</span><span class="card-price-per">/ vial</span></div>
+
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ 2 bottles FREE ($288 value)</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ 3 months supply</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Lowest price per vial</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Same-day priority shipping</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Full CoA + batch reports</span></td>
+      <td class="ctd-us"><span class="check-icon pricing-meta">✓ Dedicated research support line</span></td>
+
+      <div class="card-options">
+        <label class="card-option"><input type="radio" name="p6" value="once" checked><span class="radio-custom"></span><span class="option-text"><strong>One-Time Purchase</strong>Standard delivery</span></label>
+        <label class="card-option"><input type="radio" name="p6" value="sub"><span class="radio-custom"></span><span class="option-text"><strong>Subscribe &amp; Save<span class="save-badge">10% OFF</span></strong>Delivery every 90 days</span></label>
+      </div>
+      <button class="card-cta">SECURE MY ORDER</button>
+      <div class="card-footer"><div class="card-total">Total: $431.00 USD</div>
+      <!-- <div class="card-guarantee">
+        <div class="guarantee-icon">
+          30
+        </div>
+        30-Day Money-Back Guarantee
+      </div> -->
+    </div>
+    </div>
+  </div>
+  <div class="cta-row">
+    <!-- <button class="btn-primary">Shop the Offer</button> -->
+    <button class="btn-secondary" id="lab-report-btn">View Lab Reports ↗</button>
+  </div>
+</section>
+
+<!-- ══════════ ORDER FORM ══════════ -->
+<section class="order-section" id="order">
+  <div class="order-blob order-blob-1"></div>
+  <div class="order-blob order-blob-2"></div>
+  <div class="order-blob order-blob-3"></div>
+
+  <div class="order-header">
+    <div class="order-eyebrow">Secure Checkout</div>
+    <h2 class="order-title">Complete Your<br><span class="hl">Order</span></h2>
+    <p class="order-sub">256-bit SSL encrypted · All major cards accepted · Ships within 48 hours</p>
+  </div>
+
+  <div class="order-layout">
+
+
+    <div class="order-form-wrap" data-reveal>
+      <div class="form-corner tl"></div>
+      <div class="form-corner br"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">01</span>
+          Contact Information
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field" id="f-fname">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" placeholder="John" autocomplete="given-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-lname">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" placeholder="Doe" autocomplete="family-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-email">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" placeholder="john@example.com" autocomplete="email"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-phone">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel"/>
+            <span class="field-msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">02</span>
+          Shipping Address
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field span-2" id="f-addr1">
+            <label>Street Address <span class="req">*</span></label>
+            <input type="text" placeholder="123 Research Blvd" autocomplete="address-line1"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field span-2" id="f-addr2">
+            <label>Apt / Suite / Unit</label>
+            <input type="text" placeholder="Suite 400" autocomplete="address-line2"/>
+          </div>
+          <div class="field" id="f-city">
+            <label>City <span class="req">*</span></label>
+            <input type="text" placeholder="New York" autocomplete="address-level2"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-state">
+            <label>State <span class="req">*</span></label>
+            <select autocomplete="address-level1">
+              <option value="">— Select State —</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+              <option>Arkansas</option><option>California</option><option>Colorado</option>
+              <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+              <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+              <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+              <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+              <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+              <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+              <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+              <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+              <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+              <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+              <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+              <option>Texas</option><option>Utah</option><option>Vermont</option>
+              <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+              <option>Wisconsin</option><option>Wyoming</option>
+            </select>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-zip">
+            <label>ZIP Code <span class="req">*</span></label>
+            <input type="text" placeholder="10001" maxlength="10" autocomplete="postal-code"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-country">
+            <label>Country</label>
+            <select autocomplete="country" disabled style="opacity:0.5; cursor:not-allowed;">
+              <option selected>United States</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">03</span>
+          Payment Details
+        </div>
+        <div class="field-grid cols-2">
+          <div class="field span-2" id="f-cname">
+            <label>Name on Card <span class="req">*</span></label>
+            <input type="text" placeholder="John Doe" autocomplete="cc-name"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field span-2 card-field-icon" id="f-cnum">
+            <label>Card Number <span class="req">*</span></label>
+            <input type="text" placeholder="1234  5678  9012  3456" maxlength="19" autocomplete="cc-number" id="card-num-input"/>
+            <span class="card-icon" id="card-network">VISA / MC</span>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field" id="f-expiry">
+            <label>Expiry Date <span class="req">*</span></label>
+            <input type="text" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" id="expiry-input"/>
+            <span class="field-msg"></span>
+          </div>
+          <div class="field card-field-icon" id="f-cvv">
+            <label>CVV / CVC <span class="req">*</span></label>
+            <input type="text" placeholder="•••" maxlength="4" autocomplete="cc-csc"/>
+            <span class="card-icon">?</span>
+            <span class="field-msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+
+      <div class="form-block">
+        <div class="form-block-title">
+          <span class="block-num">04</span>
+          Additional Notes
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label>Order Notes (optional)</label>
+            <textarea placeholder="Any special delivery instructions or notes for your order..."></textarea>
+          </div>
+          <label class="check-field" style="margin-top:0.3rem;">
+            <input type="checkbox" id="consent-check"/>
+            <span class="check-box"></span>
+            <span class="check-label">I confirm this purchase is for <strong style="color:var(--sky)">research purposes only</strong> and I am 18+ years of age. I have read and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
+          </label>
+          <label class="check-field">
+            <input type="checkbox" checked/>
+            <span class="check-box"></span>
+            <span class="check-label">Subscribe to lab updates, research bulletins, and exclusive offers.</span>
+          </label>
+        </div>
+      </div>
+
+
+      <button class="submit-btn" id="submit-btn" type="button">Place Secure Order</button>
+      <div class="submit-lock">
+        <span class="lock-icon">🔒</span>
+        256-bit SSL · Your data is fully encrypted
+      </div>
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <aside class="order-summary" data-reveal-side>
+
+      <!-- Selected product -->
+      <div class="summary-panel">
+        <div class="summary-title">Your Selection</div>
+        <div class="summary-product">
+          <img class="summary-img" src="assets/images/Hero-bogo-image.webp" alt="Product"/>
+          <div class="summary-product-info">
+            <div class="summary-product-name">PureOne Peptides</div>
+            <div class="summary-product-detail">BPC-157 · GLP-3R · Ipamorelin<br>~99% Purity · Lab Tested</div>
+          </div>
+        </div>
+
+        <!-- Package selector -->
+        <div class="summary-title" style="margin-bottom:0.9rem;">Package</div>
+        <div class="pkg-options" id="pkg-options">
+          <label class="pkg-opt" data-qty="1" data-price="55.99">
+            <input type="radio" name="pkg" value="1">
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">1 Bottle</span><span class="pkg-opt-save">Save $90.47</span></span>
+            <span class="pkg-opt-price">$55.99</span>
+          </label>
+          <label class="pkg-opt active" data-qty="6" data-price="275.94">
+            <input type="radio" name="pkg" value="6" checked>
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">6 Bottles</span><span class="pkg-opt-save">Save $220.47 · Best Value</span></span>
+            <span class="pkg-opt-price">$275.94</span>
+          </label>
+          <label class="pkg-opt" data-qty="3" data-price="149.97">
+            <input type="radio" name="pkg" value="3">
+            <span class="pkg-radio"></span>
+            <span class="pkg-opt-info"><span class="pkg-opt-name">3 Bottles</span><span class="pkg-opt-save">Save $136.47</span></span>
+            <span class="pkg-opt-price">$149.97</span>
+          </label>
+        </div>
+
+        <!-- Line items -->
+        <div class="summary-lines" id="summary-lines">
+          <div class="summary-line"><span>Subtotal</span><span class="val" id="s-sub">$275.94</span></div>
+          <div class="summary-line discount"><span>Discount Applied</span><span class="val" id="s-disc">−$220.47</span></div>
+          <div class="summary-line"><span>Shipping</span><span class="val" id="s-ship">FREE</span></div>
+          <div class="summary-line total"><span>Total</span><span class="val" id="s-total">$275.94</span></div>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="summary-panel">
+        <div class="summary-title">Why PureOne</div>
+        <div class="trust-badges">
+          <div class="badge-row"><div class="badge-icon">🔬</div>Third-party lab tested — CoA included</div>
+          <div class="badge-row"><div class="badge-icon">🛡️</div>30-day money-back guarantee</div>
+          <div class="badge-row"><div class="badge-icon">🚚</div>Free US shipping on all orders over $150</div>
+          <div class="badge-row"><div class="badge-icon">🔒</div>256-bit SSL secured checkout</div>
+          <div class="badge-row"><div class="badge-icon">⚡</div>Dispatched within 48 business hours</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     §D — COMPARISON TABLE
+═══════════════════════════════════════════════════════════ -->
+<section class="compare-section" id="compare">
+  <div style="position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(26,111,196,0.09),transparent 70%);top:0;right:-150px;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+  <div style="position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(10,61,143,0.12),transparent 70%);bottom:0;left:-80px;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="sec-header reveal" style="text-align:center;margin-bottom:3.5rem;">
+      <div class="sec-eyebrow">How We Compare</div>
+      <h2 class="sec-title">PureOne Peptides vs.<br><span class="hl">Other Suppliers</span></h2>
+      <p class="sec-sub">Not all research peptide suppliers are the same — here's exactly why researchers keep coming back</p>
+    </div>
+
+    <div class="compare-table-wrap reveal">
+      <table class="ctable">
+        <thead>
+          <tr>
+            <th class="ctable-head-feature">What to Look For</th>
+            <th class="ctable-head-us">
+              <div class="ctable-head-us-inner"><img class="main-logo-img" src="assets/images/PureOne_Peptides-Logo-White.svg" /></div>
+            </th>
+            <th class="ctable-head-them">Generic Supplier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ctd-feature">Purity Level</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ ≥99% Guaranteed</span></td>
+            <td class="ctd-them"><span class="ctd-warn">~95%</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">Certificate of Analysis (CoA)</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ Every Order</span></td>
+            <td class="ctd-them"><span class="ctd-x">Sometimes</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">3rd-Party HPLC Testing</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ Independent Lab Verified</span></td>
+            <td class="ctd-them"><span class="ctd-x">✗ Self-reported</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">Same-Day Shipping Available</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ Order by 2pm Ships Today</span></td>
+            <td class="ctd-them"><span class="ctd-x">✗</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">GMP-Grade Synthesis</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ GMP Standards</span></td>
+            <td class="ctd-them"><span class="ctd-x">✗</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">Batch-to-Batch Consistency</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ Highly Consistent</span></td>
+            <td class="ctd-them"><span class="ctd-x">Varies</span></td>
+          </tr>
+          <tr>
+            <td class="ctd-feature">Customer Support</td>
+            <td class="ctd-us"><span class="ctd-win check-icon">✓ 24 hours chat, email and phone line support</span></td>
+            <td class="ctd-them"><span class="ctd-x">email only</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     §A — GLP-3R: THE TRIPLE RECEPTOR
+═══════════════════════════════════════════════════════════ -->
+<section class="receptor-section" id="glp3r">
+  <div class="section-blob" style="width:500px;height:500px;background:radial-gradient(circle,rgba(26,111,196,0.1),transparent 70%);top:-80px;right:-120px;position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+  <div class="section-blob" style="width:350px;height:350px;background:radial-gradient(circle,rgba(10,61,143,0.12),transparent 70%);bottom:0;left:-80px;position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+
+  <div class="receptor-layout">
+    <!-- Molecule diagram -->
+    <div class="receptor-card reveal-l">
+      <div class="rc-tag">GLP-3R Peptide</div>
+      <div class="rc-title">The World's First<br><span class="hl">Triple-Receptor</span> Agonist</div>
+      <!-- <div class="rc-sub">One molecule. Three metabolic pathways.</div> -->
+
+      <!-- <div class="rc-molecule-wrap">
+        <div class="rc-ring"></div>
+        <div class="rc-ring"></div>
+        <div class="rc-ring"></div>
+        <div class="rc-center-dot">GLP-3R</div>
+        <div class="rc-node rc-n1">
+          <div class="rc-node-dot">💚</div>
+          <span class="rc-node-lbl">GLP-1 Receptor</span>
+        </div>
+        <div class="rc-node rc-n2">
+          <div class="rc-node-dot">⭐</div>
+          <span class="rc-node-lbl">GIP Receptor</span>
+        </div>
+        <div class="rc-node rc-n3">
+          <div class="rc-node-dot">🔥</div>
+          <span class="rc-node-lbl">Glucagon Receptor</span>
+        </div>
+      </div> -->
+
+      <!-- <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--sky);border:1px solid rgba(26,111,196,0.2);padding:0.3rem 0.8rem;">10mg Vial</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:rgba(78,205,196,0.6);border:1px solid rgba(78,205,196,0.25);padding:0.3rem 0.8rem;">~99% Purity</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:rgba(240,192,64,0.6);border:1px solid rgba(240,192,64,0.25);padding:0.3rem 0.8rem;">Lab Tested</div>
+      </div> -->
+    </div>
+
+    <!-- Pathway list -->
+    <div class="receptor-pathways reveal-r">
+      <!-- <div class="sec-eyebrow" style="justify-content:flex-start;margin-bottom:2rem;">
+        <span>Triple Mechanism</span>
+      </div> -->
+      <div class="rp-item">
+        <!-- <span class="rp-num">01 · GLP-1 RECEPTOR</span> -->
+        <div class="rp-name">Hits the GLP-1 Receptor</div>
+        <p class="rp-desc">The same receptor targeted by the most powerful weight-loss drugs on the market. Activation slows gastric emptying, reduces hunger signals at the brain level, and modulates glucose-dependent insulin secretion — all in one pathway.</p>
+        <span class="rp-badge">✓ Appetite Suppression · Brain-Level Signaling</span>
+      </div>
+      <div class="rp-item">
+        <!-- <span class="rp-num">02 · GIP RECEPTOR</span> -->
+        <div class="rp-name">GIP Receptor — Fat Storage Control</div>
+        <p class="rp-desc">GLP-3R activates the GIP receptor with nearly 9× the potency of the body's own natural signal. GIP directly controls how fat cells store lipids and how much insulin the pancreas produces — a lever no single-target peptide can pull.</p>
+        <span class="rp-badge">✓ Fat Storage Modulation · Insulin Sensitivity</span>
+      </div>
+      <div class="rp-item">
+        <!-- <span class="rp-num">03 · GLUCAGON RECEPTOR</span> -->
+        <div class="rp-name">The Secret Metabolic Weapon</div>
+        <p class="rp-desc">No other research peptide hits the glucagon receptor simultaneously. Glucagon activation directly signals fat cells to release and oxidize stored lipids — effectively adding a turbo mechanism to energy expenditure research that single or dual agonists simply cannot replicate.</p>
+        <span class="rp-badge">✓ Lipolysis Activation · Unique Triple Synergy</span>
+      </div>
+      <div class="rp-item">
+        <!-- <span class="rp-num">04 · EXTENDED HALF-LIFE</span> -->
+        <div class="rp-name">Once-Weekly Activity Window</div>
+        <p class="rp-desc">Engineered with an attached fatty acid chain, GLP-3R demonstrates prolonged stability in research settings — remaining active for up to 6 days. This extended duration reduces dosing frequency while maintaining consistent receptor engagement, making it highly efficient for long-cycle metabolic studies.</p>
+        <span class="rp-badge">✓ ~6-Day Activity · Once-Weekly Protocol</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     §5 SERVICES
+═══════════════════════════════════════════════════════════ -->
+<section class="section-shell" id="services">
+  <div class="section-blob" style="width:500px;height:500px;background:radial-gradient(circle,rgba(10,61,143,0.12),transparent 70%);top:0;left:-100px;"></div>
+  <div class="section-blob" style="width:300px;height:300px;background:radial-gradient(circle,rgba(26,111,196,0.09),transparent 70%);bottom:50px;right:-50px;"></div>
+
+  <div class="sec-header" style="text-align:center;" class="reveal">
+    <div class="sec-eyebrow">What We Offer</div>
+    <h2 class="sec-title">The Research<br><span class="hl">Benefits</span></h2>
+    <p class="sec-sub">Based on published study data, here are the areas shown with real breakthroughs.</p>
+  </div>
+
+  <div class="services-grid" style="max-width:1180px;margin:0 auto;">
+    
+    <div class="svc-card reveal" style="transition-delay:0s">
+      <!-- <span class="svc-num">01</span>
+      <div class="svc-icon">⚖️</div> -->
+      <div class="svc-name">Body Weight Research</div>
+      <p class="svc-desc">GLP-3R has demonstrated significant outcomes in body weight studies, with research subjects showing up to 24% reduction over 48 weeks — one of the most notable findings in metabolic research to date.</p>
+      <div class="svc-tags"><span class="svc-tag">24% Reduction</span><span class="svc-tag">48 Weeks</span><span class="svc-tag">Phase 2 Data</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+    <div class="svc-card reveal" style="transition-delay:0.12s">
+      <!-- <span class="svc-num">02</span>
+      <div class="svc-icon">🩸</div> -->
+      <div class="svc-name">Glucose Control Studies</div>
+      <p class="svc-desc">Designed to support blood sugar research, GLP-3R enhances insulin-related pathways by activating pancreatic response mechanisms, helping researchers explore improved glycemic regulation.</p>
+      <div class="svc-tags"><span class="svc-tag">Insulin Activity</span><span class="svc-tag">Glucose Balance</span><span class="svc-tag">Diabetes Focus</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+    <div class="svc-card reveal" style="transition-delay:0.24s">
+      <!-- <span class="svc-num">03</span>
+      <div class="svc-icon">🔥</div> -->
+      <div class="svc-name">Fat Metabolism Research</div>
+      <p class="svc-desc">Beyond appetite pathways, GLP-3R uniquely activates the glucagon receptor — signaling fat cells to release and oxidize stored lipids, offering a deeper layer of metabolic study.</p>
+      <div class="svc-tags"><span class="svc-tag">Lipolysis</span><span class="svc-tag">Energy Burn</span><span class="svc-tag">Triple Action</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+    <div class="svc-card reveal" style="transition-delay:0.36s">
+      <!-- <span class="svc-num">04</span>
+      <div class="svc-icon">❤️</div> -->
+      <div class="svc-name">Cardiovascular Research</div>
+      <p class="svc-desc">Ongoing investigations explore GLP-3R’s role in cardiovascular markers, including blood pressure, lipid profiles, and systemic inflammation — key factors in heart health studies.</p>
+      <div class="svc-tags"><span class="svc-tag">Blood Pressure</span><span class="svc-tag">Cholesterol</span><span class="svc-tag">Inflammation</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+    <div class="svc-card reveal" style="transition-delay:0.48s">
+      <!-- <span class="svc-num">05</span>
+      <div class="svc-icon">🧫</div> -->
+      <div class="svc-name">Liver Fat Analysis</div>
+      <p class="svc-desc">Emerging data suggests GLP-3R may significantly reduce liver fat levels, making it a valuable compound for studying metabolic liver conditions and fatty liver progression.</p>
+      <div class="svc-tags"><span class="svc-tag">Liver Fat</span><span class="svc-tag">Metabolic Health</span><span class="svc-tag">NAFLD Research</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+    <div class="svc-card reveal" style="transition-delay:0.60s">
+      <!-- <span class="svc-num">06</span>
+      <div class="svc-icon">🧬</div> -->
+      <div class="svc-name">Receptor Binding Studies</div>
+      <p class="svc-desc">GLP-3R’s multi-receptor activity enables advanced pharmacological research, allowing scientists to study differential binding strength across GLP-1, GIP, and glucagon pathways.</p>
+      <div class="svc-tags"><span class="svc-tag">Triple Receptor</span><span class="svc-tag">Binding Study</span><span class="svc-tag">Pharmacology</span></div>
+      <span class="svc-arrow">→</span>
+    </div>
+
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     §B — EVERYTHING YOU GET: FEATURES GRID
+═══════════════════════════════════════════════════════════ -->
+<section class="features-section" id="features">
+  <div style="position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(10,61,143,0.12),transparent 70%);top:0;left:-100px;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+  <div style="position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(240,192,64,0.04),transparent 70%);bottom:50px;right:-50px;border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="sec-header reveal" style="text-align:center;margin-bottom:3.5rem;">
+      <div class="sec-eyebrow">GLP-3R Features</div>
+      <h2 class="sec-title">Everything You Get<br><span class="hl">With GLP-3R</span></h2>
+      <p class="sec-sub">Eight research advantages in a single vial · Unmatched in the peptide landscape</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Wide featured card -->
+      <!-- <div class="feat-card wide reveal" style="transition-delay:0s;">
+        <div>
+          <div class="feat-icon">📦</div>
+          <span class="feat-num">FORMAT</span>
+          <div class="feat-name">Lyophilized Freeze-Dried Powder</div>
+          <p class="feat-desc">Supplied in a sealed vial as lyophilized powder — the gold-standard format for research peptides. Stays stable longer, ships safely, and provides a clean, consistent starting point every time you reconstitute it.</p>
+        </div>
+        
+      </div> -->
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">⚡</div>
+        <!-- <span class="feat-num">SYNERGY</span> -->
+        <div class="feat-name">Appetite Suppression + Energy Burn Together</div>
+        <p class="feat-desc">Most peptides reduce hunger OR burn fat — not both. GLP-3R does both simultaneously. The GLP-1 receptor cuts appetite; the glucagon receptor tells fat cells to burn energy. Study both mechanisms in one clean protocol.</p>
+      </div>
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">🧬</div>
+        <!-- <span class="feat-num">SYNERGY</span> -->
+        <div class="feat-name">Synergistic Multi-Pathway Effects</div>
+        <p class="feat-desc">Hitting all three receptors at once creates a compounding effect — the combined result is stronger than each pathway individually. Preclinical models confirm GLP-3R outperforms separate compounds given together. One peptide, amplified results.</p>
+      </div>
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">🔬</div>
+        <!-- <span class="feat-num">01</span> -->
+        <div class="feat-name">Improved Insulin Sensitivity Research</div>
+        <p class="feat-desc">Activates both GLP-1 and GIP incretin pathways, boosting cellular insulin response. Research data shows meaningful improvements in blood sugar regulation — ideal for diabetes and metabolic disorder research.</p>
+        <!-- <div class="feat-tags"><span class="feat-tag">GLP-1</span><span class="feat-tag">GIP</span><span class="feat-tag">Insulin</span></div> -->
+      </div>
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">❤️</div>
+        <!-- <span class="feat-num">02</span> -->
+        <div class="feat-name">Lowers Triglycerides & Bad Cholesterol</div>
+        <p class="feat-desc">Published research shows GLP-3R reduces ANGPTL3/8 — the protein responsible for raising triglycerides and LDL cholesterol — via the glucagon receptor pathway. A powerful tool for cardiovascular and lipid metabolism researchers.</p>
+        <!-- <div class="feat-tags"><span class="feat-tag">LDL</span><span class="feat-tag">Triglycerides</span><span class="feat-tag">Cardiovascular</span></div> -->
+      </div>
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">🧠</div>
+        <!-- <span class="feat-num">03</span> -->
+        <div class="feat-name">Central Nervous System Appetite Signaling</div>
+        <p class="feat-desc">GLP-1 receptor activation reaches the hypothalamus directly, affecting hunger regulation at the brain level — not just in the stomach. GLP-3R opens CNS-metabolic crossover research that single-target peptides simply cannot access.</p>
+        <!-- <div class="feat-tags"><span class="feat-tag">Hypothalamus</span><span class="feat-tag">CNS</span><span class="feat-tag">Appetite</span></div> -->
+      </div>
+
+      <div class="feat-card reveal" style="transition-delay:0.1s;">
+        <div class="feat-icon">💪</div>
+        <!-- <span class="feat-num">05</span> -->
+        <div class="feat-name">Preserves Lean Muscle While Reducing Fat</div>
+        <p class="feat-desc">Phase 2 trial data confirms that the majority of body weight reduction with GLP-3R comes from fat mass — not lean muscle. This makes it uniquely valuable for body composition research protocols.</p>
+        <!-- <div class="feat-tags"><span class="feat-tag">Lean Muscle</span><span class="feat-tag">Body Comp</span><span class="feat-tag">Fat Loss</span></div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     §C — PRODUCT FORMAT BANNER
+═══════════════════════════════════════════════════════════ -->
+<section class="format-section" id="format">
+  <div class="format-banner reveal">
+    <div class="format-bg-text">LYOPHILIZED</div>
+    <div class="format-left">
+      <span class="format-label">Product Format</span>
+      <h3 class="format-title">Supplied as <span class="hl">Lyophilized</span><br>Freeze-Dried Powder</h3>
+      <p class="format-body">Every vial of Pure One GLP-3R is manufactured as lyophilized powder. Reconstitute with sterile bacteriostatic water when ready to use. Store dry at −20°C long-term. Use within 28–30 days after reconstitution.</p>
+    </div>
+    <div class="format-stats">
+      <div class="fstat">
+        <div class="fstat-num">−20°C</div>
+        <div class="fstat-lbl">Long-term storage</div>
+      </div>
+      <div class="fstat">
+        <div class="fstat-num" style="color:var(--success);">28–30d</div>
+        <div class="fstat-lbl">After reconstitution</div>
+      </div>
+      <div class="fstat">
+        <div class="fstat-num">~99%</div>
+        <div class="fstat-lbl">Purity guaranteed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     §E — REAL STUDY DATA / THE SCIENCE
+═══════════════════════════════════════════════════════════ -->
+<section class="science-section" id="science">
+  <div style="position:absolute;width:500px;height:400px;background:radial-gradient(ellipse,rgba(26,111,196,0.1),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;filter:blur(100px);pointer-events:none;"></div>
+
+  <div class="science-layout">
+    <!-- LEFT: chart panel -->
+    <div class="science-chart-panel reveal-l" id="chart-panel">
+      <div class="chart-label">Body Weight Change in Phase 2 Study (48 Weeks)*</div>
+      <div class="chart-bars">
+        <div class="chart-row">
+          <div class="chart-row-header">
+            <span class="cr-name">GLP-3R 12mg</span>
+            <span class="cr-val">−24% body weight</span>
+          </div>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill cbf-1">−24%</div>
+          </div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-row-header">
+            <span class="cr-name">Tirzepatide (dual)</span>
+            <span class="cr-val">−22% body weight</span>
+          </div>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill cbf-2">−22%</div>
+          </div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-row-header">
+            <span class="cr-name">Semaglutide (single)</span>
+            <span class="cr-val">−15% body weight</span>
+          </div>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill cbf-3">−15%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-meta">
+        <div class="chart-meta-item"><span class="cmi-num">48wk</span><span class="cmi-lbl">Trial Duration</span></div>
+        <div class="chart-meta-item"><span class="cmi-num">338</span><span class="cmi-lbl">Participants</span></div>
+        <div class="chart-meta-item"><span class="cmi-num">NEJM</span><span class="cmi-lbl">Published In</span></div>
+        <div class="chart-meta-item"><span class="cmi-num">2023</span><span class="cmi-lbl">Phase 2 Results</span></div>
+      </div>
+      <div class="sci-ref-chips">
+        <span class="sci-chip">NEJM · 2023</span>
+        <span class="sci-chip">PubMed Indexed</span>
+        <span class="sci-chip">NCT04881760</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: findings -->
+    <div class="reveal-r">
+      <div class="sec-eyebrow" style="justify-content:flex-start;margin-bottom:1.5rem;"><span>The Science</span></div>
+      <h2 class="sec-title" style="margin-bottom:1rem;">Real Study Data You<br><span class="hl">Can Trust</span></h2>
+      <p style="font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;line-height:1.8;color:var(--sky);margin-bottom:2.5rem;">GLP-3R isn't a new compound without evidence. It's been studied in one of the largest clinical trials ever conducted for metabolic research — published in the New England Journal of Medicine.</p>
+
+      <div class="science-findings">
+        <div class="sf-item">
+          <span class="sf-num">01 · PHASE 2 TRIAL RESULT</span>
+          <div class="sf-title">The Biggest Weight Loss Ever Seen in a Drug Study</div>
+          <p class="sf-body">The Phase 2 trial showed up to 24% body weight reduction at 48 weeks — the largest number ever recorded at that point in any drug study. The curve was still going down at study end. The plateau had not been reached.</p>
+        </div>
+        <div class="sf-item">
+          <span class="sf-num">02 · BODY COMPOSITION</span>
+          <div class="sf-title">Almost All the Weight Lost Was Fat, Not Muscle</div>
+          <p class="sf-body">Research confirms that the vast majority of weight reduction with GLP-3R came from fat mass — not lean tissue. This makes it far more valuable for body composition research than simple calorie restriction models.</p>
+        </div>
+        <div class="sf-item">
+          <span class="sf-num">03 · SYNERGY CONFIRMED</span>
+          <div class="sf-title">Outperforms Three Separate Compounds Combined</div>
+          <p class="sf-body">Researchers who tested separate compounds for each receptor found the individual results did not stack additively. The fact that one molecule hits all three simultaneously creates a molecular synergy that cannot be replicated by mixing compounds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     §F — 30-DAY GUARANTEE BANNER
+═══════════════════════════════════════════════════════════ -->
+<section class="guarantee-section" id="guarantee">
+  <div class="guarantee-banner reveal">
+    <!-- SVG Dial -->
+    <div class="g-dial">
+      <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="55" cy="55" r="50" stroke="rgba(26,111,196,0.2)" stroke-width="1"/>
+        <circle cx="55" cy="55" r="50" stroke="url(#goldGrad)" stroke-width="2"
+          stroke-dasharray="314" stroke-dashoffset="0"
+          stroke-linecap="round" transform="rotate(-90 55 55)"/>
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#f0c040"/>
+            <stop offset="100%" stop-color="#a8d8f0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="g-dial-text">
+        <span class="g-dial-num">30</span>
+        <span class="g-dial-sub">DAY<br>MONEY<br>BACK</span>
+      </div>
+    </div>
+
+    <div class="g-sep"></div>
+
+    <!-- Content -->
+    <div class="g-content">
+      <span class="g-label">Our Promise To You</span>
+      <h3 class="g-title">We Stand Behind Every<br><span class="hl">Single Vial We Ship</span></h3>
+      <p class="g-body">We've built PureOne Peptides on trust, and we plan to keep it that way. If you're not completely satisfied with your order for any reason — purity, consistency, delivery, anything — just reach out within 30 days and we'll make it right. No hoops, no questions designed to discourage you. Just a full refund or replacement, your choice.</p>
+    </div>
+
+    <div class="g-sep"></div>
+
+    <!-- Checklist -->
+    <div class="g-checks">
+      <div class="g-check"><span class="g-check-icon">✓</span>Full refund or replacement</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>No complicated return process</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>30 days from delivery date</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>Any reason, zero questions</div>
+      <div class="g-check"><span class="g-check-icon">✓</span>Response within 1 business hour</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     §6 TESTIMONIALS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-shell testimonials-section" id="testimonials">
+  <div class="section-blob" style="width:600px;height:400px;background:radial-gradient(ellipse,rgba(26,111,196,0.09),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+
+  <div class="sec-header" style="text-align:center;" class="reveal">
+    <div class="sec-eyebrow">Social Proof</div>
+    <h2 class="sec-title">What Researchers<br><span class="hl">Are Saying</span></h2>
+    <p class="sec-sub">Verified purchases · Independent researchers · Real outcomes</p>
+  </div>
+
+  <!-- Metrics strip -->
+  <div class="t-metrics reveal">
+    <div class="t-metric">
+      <span class="t-metric-num">4.9</span>
+      <span class="t-metric-lbl">Average Rating</span>
+    </div>
+    <div class="t-metric">
+      <span class="t-metric-num">2,400+</span>
+      <span class="t-metric-lbl">Verified Reviews</span>
+    </div>
+    <div class="t-metric">
+      <span class="t-metric-num">98%</span>
+      <span class="t-metric-lbl">Would Reorder</span>
+    </div>
+    <div class="t-metric">
+      <span class="t-metric-num">50K+</span>
+      <span class="t-metric-lbl">Active Researchers</span>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <div class="t-slider-wrap reveal">
+    <div class="t-stage">
+      <!-- Card 1 -->
+      <div class="tcard">
+        <div class="tcard-inner">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"We've been using PureOne's GLP-3R in our obesity research for months now. The purity is excellent every single time — our HPLC always confirms 99%+."</p>
+          <div class="t-author">
+            <div class="t-avatar">
+              <img src="assets/images/testimonials-1.png" />
+            </div>
+            <div>
+              <div class="t-name">M. Katsaris</div>
+              <div class="t-role">Boston, MA</div>
+            </div>
+            <span class="t-badge">Verified Purchase</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="tcard">
+        <div class="tcard-inner">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Ordered on a Tuesday morning and it was at our lab by end of day. The lyophilized powder format is exactly what we need — it's stable, easy to reconstitute, and the concentration is spot on every time. PureOne is our go-to now."</p>
+          <div class="t-author">
+            <div class="t-avatar">
+              <img src="assets/images/testimonials-2.avif" />
+            </div>
+            <div>
+              <div class="t-name">T. Ramos, M.Sc.</div>
+              <div class="t-role">San Diego, CA</div>
+            </div>
+            <span class="t-badge">Institutional Client</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="tcard">
+        <div class="tcard-inner">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"I was skeptical at first but the consistency between batches has been impressive. Six months of ordering and every CoA shows clean results. Our liver research has moved so much faster thanks to having a reliable triple-agonist compound."</p>
+          <div class="t-author">
+            <div class="t-avatar">
+              <img src="assets/images/testimonials-3.webp" />
+            </div>
+            <div>
+              <div class="t-name">S. Lindqvist</div>
+              <div class="t-role">Chicago, IL</div>
+            </div>
+            <span class="t-badge">Verified Purchase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="t-controls">
+      <button class="t-btn" id="t-prev">←</button>
+      <div class="t-dots">
+        <button class="t-dot active"></button>
+        <button class="t-dot"></button>
+        <button class="t-dot"></button>
+      </div>
+      <button class="t-btn" id="t-next">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     §7 FAQ
+═══════════════════════════════════════════════════════════ -->
+<section class="section-shell" id="faq">
+  <div class="section-blob" style="width:450px;height:450px;background:radial-gradient(circle,rgba(26,111,196,0.09),transparent 70%);top:0;right:-100px;"></div>
+
+  <div class="faq-layout">
+    <!-- Sidebar -->
+    <div class="faq-sidebar reveal-l">
+      <div class="sec-eyebrow" style="justify-content:flex-start;margin-bottom:1.5rem;">
+        <span>FAQ</span>
+      </div>
+      <h3 class="faq-sidebar-title">Got<br><span class="hl">Questions?</span></h3>
+      <p class="faq-sidebar-body">We've compiled answers to the most common questions from our research community. Can't find what you need? Our scientific advisory team responds within one business hour.</p>
+      <button class="faq-contact-btn">Contact Our Team →</button>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq-list reveal-r">
+      <div class="faq-item open">
+        <div class="faq-q">
+          <span class="faq-q-text">How does it ship and how do I store it?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Our GLP-3R is supplied as a lyophilized (freeze-dried) powder in sealed vials — this format keeps the peptide stable and protected during shipping and storage. When it arrives, store the dry powder in a cool, dry, dark place. For longer storage, keep it at -20°C. Once you reconstitute it with bacteriostatic water or appropriate buffer, keep it in the fridge at 2–8°C and use it within 28–30 days. Avoid repeated freeze-thaw cycles to preserve compound integrity.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">How is it different from GLP-1S compounds?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">GLP-1S only activates one receptor (GLP-1). That's good, but it's like a one-trick pony. GLP-3R activates three receptors at once — GLP-1, GIP, and glucagon. The glucagon part is what really sets it apart, because it directly tells fat cells to burn up, which GLP-1S can't do at all.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">What's in the Certificate of Analysis?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The CoA is a document that proves the quality of what you're getting. It includes: the exact purity percentage from HPLC testing, mass spectrometry confirmation of the right molecule, batch number, date it was made, how to store it, and the molecular weight and formula. You can use it in your research documentation.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">How pure is it? How do you check?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Every batch is made to ≥99% chemical purity. We verify this using HPLC (a machine that separates and measures each chemical) and Mass Spectrometry (which confirms the exact molecule). A Certificate of Analysis comes with every order so you can see the numbers yourself. We also encourage you to run your own test.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Why is it supplied as a lyophilized powder?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Lyophilized (freeze-dried) powder is the gold standard format for research peptides. Removing the water from the compound during manufacturing makes it much more stable — it can be stored at room temperature short-term or at -20°C long-term without degrading. This format also makes shipping easier and safer. When you're ready to use it in your research, simply reconstitute with sterile bacteriostatic water or an appropriate buffer solution. The result is a consistent, clean, measurable concentration every time — which is critical for reproducible research results.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">What if I'm not happy with my order?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Easy — just contact us within 30 days. If the product doesn't match the CoA, fails your own purity test, or arrives damaged, we'll send a replacement or give you a full refund. No questions asked. We want every researcher to be completely confident ordering from us.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     §8 FINAL CTA — STAY IN THE LAB LOOP (Newsletter / Re-engagement)
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="newsletter">
+  <div class="cta-bg-glow"></div>
+  <div class="cta-grid-overlay"></div>
+
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Stay In The Loop</div>
+    <h2 class="cta-headline">
+      Advance Your<br>
+      <span class="hl">Research</span>
+    </h2>
+    <p class="cta-body">
+      Join over 50,000 researchers who receive our lab bulletins — new peptide releases,<br>
+      exclusive subscriber discounts, and the latest in peptide science.
+    </p>
+
+    <div class="newsletter-row">
+      <input type="email" placeholder="your.research@institution.edu" id="nl-email"/>
+      <button class="newsletter-btn" id="nl-btn">Subscribe</button>
+    </div>
+    <p class="newsletter-note">No spam. Unsubscribe anytime. Research community only.</p>
+
+    <div class="cta-trust-strip">
+      <div class="cta-trust-item"><span class="cta-trust-icon">🔬</span>99% Purity Guarantee</div>
+      <div class="cta-trust-item"><span class="cta-trust-icon">🛡️</span>30-Day Money Back</div>
+      <div class="cta-trust-item"><span class="cta-trust-icon">🚚</span>Free US Shipping $150+</div>
+      <div class="cta-trust-item"><span class="cta-trust-icon">🔒</span>SSL Encrypted</div>
+      <div class="cta-trust-item"><span class="cta-trust-icon">⚗️</span>GMP Certified Facility</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+
+
+<!-- ─── FOOTER HTML ─── -->
+<footer class="site-footer-v2">
+  <!-- Ambient blobs -->
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-blob footer-blob-3"></div>
+
+  <!-- Top strip: logo + nav + live badge -->
+  <!-- <div class="footer-top">
+    <div class="footer-top-logo">
+      <span class="logo-dot"></span>
+      PureOne<span class="logo-accent">Peptides</span>
+    </div>
+    <nav class="footer-top-nav">
+      <a href="#glp3r">GLP-3R</a>
+      <a href="#features">Features</a>
+      <a href="#science">The Science</a>
+      <a href="#compare">Compare</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#order">Order</a>
+    </nav>
+    <div class="footer-top-badge">
+      <span class="badge-dot"></span>
+      All Vials In Stock
+    </div>
+  </div> -->
+
+  <!-- Main body: brand + 3 link columns -->
+  <div class="footer-body">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        PureOne
+        <span>Peptides</span>
+      </div>
+      <p class="footer-brand-desc">
+        Research-grade peptides manufactured in an FDA-registered, GMP-compliant facility in San Diego, CA. Every batch independently lab-tested. Certificates of Analysis published on every order.
+      </p>
+      <div class="footer-cert-row">
+        <div class="footer-cert">
+          <span class="footer-cert-num">FDA</span>
+          <span class="footer-cert-lbl">Registered Lab</span>
+        </div>
+        <div class="footer-cert">
+          <span class="footer-cert-num">GMP</span>
+          <span class="footer-cert-lbl">Compliant</span>
+        </div>
+        <div class="footer-cert">
+          <span class="footer-cert-num">ISO</span>
+          <span class="footer-cert-lbl">Certified</span>
+        </div>
+        <div class="footer-cert">
+          <span class="footer-cert-num">~99%</span>
+          <span class="footer-cert-lbl">Purity</span>
+        </div>
+      </div>
+      <div class="footer-social-row">
+        <a class="footer-social" href="#" aria-label="X / Twitter">𝕏</a>
+        <a class="footer-social" href="#" aria-label="LinkedIn">in</a>
+        <a class="footer-social" href="#" aria-label="Email">✉</a>
+        <a class="footer-social" href="#" aria-label="Research Gate">Rg</a>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="footer-col">
+      <div class="footer-col-title">Products</div>
+      <ul class="footer-col-links">
+        <li><a href="#">GLP-3R 10mg RUO</a></li>
+        <li><a href="#">BPC-157 5mg RUO</a></li>
+        <li><a href="#">Ipamorelin 5mg RUO</a></li>
+        <li><a href="#">Certificate of Analysis</a></li>
+        <li><a href="#">Batch Reports</a></li>
+        <li><a href="#">Institutional Orders</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-col-links">
+        <li><a href="#about">About PureOne</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Press & Media</a></li>
+      </ul>
+    </div>
+
+    <!-- Research -->
+    <div class="footer-col">
+      <div class="footer-col-title">Research</div>
+      <ul class="footer-col-links">
+        <li><a href="#science">Study Data</a></li>
+        <li><a href="#">NEJM Publication</a></li>
+        <li><a href="#">PubMed Index</a></li>
+        <li><a href="#">Storage Protocols</a></li>
+        <li><a href="#">Reconstitution Guide</a></li>
+        <li><a href="#faq">Research FAQ</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /footer-body -->
+
+  <!-- Disclaimer -->
+  <div class="footer-disclaimer-wrap">
+    <div class="footer-disclaimer">
+      <div class="disclaimer-header">
+        <span class="warn-icon">⚠</span>
+        Important — Please Read
+      </div>
+      <div class="disclaimer-body">
+        <p>All products sold by Pure One Peptides are <strong>FOR RESEARCH USE ONLY (RUO)</strong>. They are <strong>NOT approved by the FDA</strong> for human or animal use. They are not medicines and are not meant to diagnose, treat, cure, or prevent any disease.</p>
+        <p>GLP-3R sold by Pure One Peptides is a research-grade compound for <strong>in vitro laboratory and preclinical research only</strong>. When you buy, you confirm you are a qualified researcher using this for legitimate laboratory research, and you take full responsibility for following all local and federal laws about research chemicals.</p>
+        <p>Any references to study results or clinical trial data on this page are from published scientific literature and are provided for informational context only — not as medical claims.</p>
+        <p class="disclaimer-final"><strong>Not for resale. Not for human or animal consumption. Store safely. Keep away from children.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study citation -->
+  <div class="footer-citation">
+    <span class="cite-icon">📄</span>
+    <p class="cite-text">
+      <strong>Study Source:</strong> Jastreboff AM, et al. <em>"Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial."</em>
+      <em>N Engl J Med.</em> 2023;389(6):514–526. NCT04881760.
+    </p>
+    <div class="cite-links">
+      <a class="cite-link" href="https://www.nejm.org" target="_blank" rel="noopener">View on NEJM.org ↗</a>
+      <a class="cite-link" href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener">PubMed ↗</a>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 PureOne Peptides. All rights reserved. · Research Use Only</div>
+    <div class="footer-payments">
+      <span class="pay-chip">VISA</span>
+      <span class="pay-chip">MC</span>
+      <span class="pay-chip">AMEX</span>
+      <span class="pay-chip">PayPal</span>
+    </div>
+    <div class="footer-policy-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">RUO Policy</a>
+    </div>
+  </div>
+
+</footer>
+<!-- ─── END FOOTER ─── -->
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
